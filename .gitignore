@@ -1,0 +1,4 @@
+*.gz
+Stops*.csv
+
+.idea/
