@@ -2,7 +2,7 @@
 
 const https = require('https');
 
-https.get('https://raw.githubusercontent.com/hmcts/dtsse-node-streams-workshop/master/Stops.csv', res => {
+https.get('https://raw.githubusercontent.com/linusnorton/workshop-node-streams/master/Stops.csv', res => {
 
   res.on('data', data => {
     console.log(data);

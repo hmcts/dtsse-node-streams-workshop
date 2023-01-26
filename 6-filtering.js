@@ -1,13 +1,11 @@
 
 const fs = require('fs');
 const { pipeline } = require('stream/promises');
-const readline = require('readline');
 
 const run = async () => {
-  const input = fs.createReadStream('Stops.csv');
 
   await pipeline(
-    readline.createInterface({ input }),
+    fs.createReadStream('Stops.csv'),
     async function* (source) {
 
       for await (const chunk of source) {

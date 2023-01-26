@@ -1,6 +1,7 @@
 
 const fs = require('fs');
 const { pipeline } = require('stream/promises'); // requires node 15!
+const readline = require('readline');
 
 const run = async () => {
 
@@ -40,6 +41,21 @@ run().catch(console.error);
 
 // what happens if you have more than one \n in a chunk?
 
-// const input = fs.createReadStream('Stops.csv');
-// const readline = require('readline');
-// readline.createInterface({ input }),
+// const run = async () => {
+//   const input = fs.createReadStream('Stops.csv');
+//
+//   await pipeline(
+//     readline.createInterface({ input }),
+//     async function* (source) {
+//       for await (const chunk of source) {
+//         if (chunk.includes('Edinburgh')) {
+//           yield chunk;
+//         } else {
+//           yield '';
+//         }
+//       }
+//     },
+//     fs.createWriteStream('Stops2.csv')
+//   );
+//
+// }
